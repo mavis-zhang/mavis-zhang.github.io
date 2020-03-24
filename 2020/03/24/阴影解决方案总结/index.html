@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh_CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="阴影解决方案总结">
+<meta property="og:url" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="mavis&#39;sblog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture0.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture1.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture2.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture3.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture4.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture5.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture6.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture7.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture8.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture9.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture10.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture11.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture12.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture13.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture14.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture15.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture16.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture17.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture18.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture19.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture20.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture21.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture22.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture23.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture24.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture25.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture26.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture27.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture28.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture29.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture30.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture31.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture32.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture33.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture34.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture35.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture36.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture37.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture38.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture39.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture40.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture41.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture42.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture43.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture44.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture45.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture46.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture47.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture48.png">
+<meta property="article:published_time" content="2020-03-24T00:01:47.000Z">
+<meta property="article:modified_time" content="2020-03-24T00:02:20.009Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/Picture0.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/24/阴影解决方案总结/"/>
+
+
+
+
+
+  <title>阴影解决方案总结 | mavis'sblog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">mavis'sblog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mavis'sblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">阴影解决方案总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-24T08:01:47+08:00">
+                2020-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B8%B2%E6%9F%93/" itemprop="url" rel="index">
+                    <span itemprop="name">渲染</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="Picture0.jpg" alt=""></p>
+<a id="more"></a>
+<p>阴影锯齿:<br>Perspective Aliasing:<br><img src="Picture1.png" alt=""><br>原因:<br><img src="Picture2.png" alt=""><br>结论:<br>      Close To Camera: Perspective Aliasing<br>      Distant Regions: OverSampling</p>
+<p>Projection Aliasing:<br>省略</p>
+<p>准备场景:<br>视锥体平面<br>Direct3D:<br><img src="Picture3.png" alt=""><br>MVP矩阵变换:<br><img src="Picture4.png" alt=""><br>点位于左剪裁平面内:<br><img src="Picture5.png" alt=""><br>点位于右裁剪平面内:<br><img src="Picture6.png" alt=""><br>点位于下裁剪平面内:<br><img src="Picture7.png" alt=""><br>点位于上裁剪平面内:<br><img src="Picture8.png" alt=""><br>点位于近平面内:<br><img src="Picture9.png" alt=""><br>点位于远平面内:<br><img src="Picture10.png" alt=""></p>
+<p>Code:<br>D3DXPLANE  camPlanes[6];<br>Frustum::Frustum(const D3DXMATRIX* matrix)<br>{<br>    D3DXVECTOR4  column1( matrix-&gt;_11, matrix-&gt;_21, matrix-&gt;_31, matrix-&gt;_41 );<br>    D3DXVECTOR4  column2( matrix-&gt;_12, matrix-&gt;_22, matrix-&gt;_32, matrix-&gt;_42 );<br>    D3DXVECTOR4  column3( matrix-&gt;_13, matrix-&gt;_23, matrix-&gt;_33, matrix-&gt;_43 );<br>    D3DXVECTOR4  column4( matrix-&gt;_14, matrix-&gt;_24, matrix-&gt;_34, matrix-&gt;_44 );</p>
+<pre><code>D3DXVECTOR4  planes[6];
+planes[0] = column4 + column1;  // left
+planes[1] = column4 - column1;  // right
+planes[2] = column4 + column2;  // bottom
+planes[3] = column4 - column2;  // top
+planes[4] = column3;           // near
+planes[5] = column4 - column3;  //  far
+
+int  p;
+for (p=0; p&lt;6; p++)  // normalize  the  planes
+{
+    float  dot = planes[p].x*planes[p].x + planes[p].y*planes[p].y + </code></pre><p>planes[p].z*planes[p].z;<br>        dot = 1.f / sqrtf(dot);<br>        planes[p] = planes[p] * dot;<br>}</p>
+<p>注意：平面归一化，用于点到平面距离的计算<br><img src="Picture11.png" alt=""></p>
+<p>OpenGL:<br>省略</p>
+<p>包围盒与视锥体:</p>
+<p>Code:<br>// 0 包围盒位于视锥体外<br>// 1 包围盒位于视锥体内<br>// 2 包围盒与视锥体相交<br>D3DXPLANE  camPlanes[6];<br>int Frustum::TestBox(const BoundingBox* box) const<br>{<br>    D3DXVECTOR3  vertexs[8];<br>    vertexs[0] = D3DXVECTOR3(box-&gt;maxPt.x, box-&gt;maxPt.y, box-&gt;maxPt.z);<br>    vertexs[1] = D3DXVECTOR3(box-&gt;minPt.x, box-&gt;maxPt.y, box-&gt;maxPt.z);<br>    vertexs[2] = D3DXVECTOR3(box-&gt;minPt.x, box-&gt;maxPt.y, box-&gt;minPt.z);<br>    vertexs[3] = D3DXVECTOR3(box-&gt;maxPt.x, box-&gt;maxPt.y, box-&gt;minPt.z);<br>    vertexs[4] = D3DXVECTOR3(box-&gt;maxPt.x, box-&gt;minPt.y, box-&gt;maxPt.z);<br>    vertexs[5] = D3DXVECTOR3(box-&gt;minPt.x, box-&gt;minPt.y, box-&gt;maxPt.z);<br>    vertexs[6] = D3DXVECTOR3(box-&gt;minPt.x, box-&gt;minPt.y, box-&gt;minPt.z);<br>    vertexs[7] = D3DXVECTOR3(box-&gt;maxPt.x, box-&gt;minPt.y, box-&gt;minPt.z);</p>
+<pre><code>int  iTotalIn = 0;
+for (int i = 0; i &lt; 6; i++)
+{
+    Int  iCntIn = 1;
+    int  iCntOut = 0;
+    for (int j = 0; j &lt; 8; j++)
+    {
+        if (D3DXPlaneDotCoord(&amp;camPlanes[i], &amp;vertexs[j]) &lt; 0.f)
+        {
+            iCntIn = 0;
+            iCntOut++;
+        }
+    }
+    if (iCntOut == 8)
+        return 0;
+    iTotalIn += iCntIn;
+}</code></pre><p>if (iTotalIn==6)<br>return 1;<br>    return 2;<br>}</p>
+<p>包围球与视锥体:</p>
+<p>Code:<br>// 0 包围球位于视锥体外<br>// 1 包围球位于视锥体内<br>// 2 包围球与视锥体相交<br>D3DXPLANE  camPlanes[6];<br>int  Frustum::TestSphere(const BoundingSphere* sphere) const<br>{<br>    float  radius = sphere-&gt;radius;<br>    int  iTotalIn;<br>    for (int i = 0; (i &lt; 6); i++)<br>    {<br>        float  fDistance = D3DXPlaneDotCoord(&amp;camPlanes[i], &amp;sphere-&gt;centerVec);<br>        if (fDistance &lt; -radius)<br>            return 0;<br>        if (fDistance) &gt; radius)<br>            iTotalIn++;<br>    }<br>if (iTotalIn==6)<br>return 1;<br>    return 2;<br>}</p>
+<p>Shadow Caster<br>条件:<br>物体包围盒位于视锥体内或者与视锥体相交。<br>物体包围盒位于视锥体外，但是物体包围球沿光源方向移动一段距离后,位于视锥体内或者与视锥体相交<br><img src="Picture12.png" alt=""><br><img src="Picture13.png" alt=""></p>
+<p>Code:<br>D3DXPLANE  camPlanes[6];<br>bool Frustum::TestSweptSphere(const BoundingSphere *sphere,<br>const D3DXVECTOR3 *sweepDir) const<br>{<br>    float displacements[12];<br>    int cnt = 0;<br>    float a, b;<br>    bool inFrustum = false;</p>
+<pre><code>for (int i=0; i&lt;6; i++)
+{
+    if (SweptSpherePlaneIntersect(a, b, &amp;camPlanes[i], sphere, sweepDir))
+    {
+        if (a&gt;=0.f)
+            displacements[cnt++] = a;
+        if (b&gt;=0.f)
+            displacements[cnt++] = b;
+    }
+}
+
+for (int i=0; i&lt;cnt; i++)
+{
+    BoundingSphere displacedSphere(*sphere);
+    displacedSphere.centerVec += (*sweepDir)*displacements[i];
+    displacedSphere.radius *= 1.1f;
+    inFrustum |= TestSphere(&amp;displacedSphere);
+}
+return inFrustum;</code></pre><p>}<br>bool Frustum::TestSphere(const BoundingSphere* sphere) const<br>{<br>    bool inside = true;<br>    float radius = sphere-&gt;radius;</p>
+<pre><code>for (int i = 0; (i &lt; 6) &amp;&amp; inside; i++)
+{
+inside &amp;= ((D3DXPlaneDotCoord(&amp;camPlanes[i], &amp;sphere-&gt;centerVec) + radius) &gt;= 0.f);
+}
+
+return inside;</code></pre><p>}</p>
+<p>Shadow Reciever:<br>条件:<br>物体包围盒位于视锥体内或者与视锥体相交。</p>
+<p>阴影解决方案总结:</p>
+<p>PSM:</p>
+<p>无穷远点:<br>InfinityPointInViewSpace=<br>[ LightDirInViewSpace.x,  LightDirInViewSpace.y,  LightDirInViewSpace.z,  0.0 ]<br>参考资料: <a href="http://www.nlpr.ia.ac.cn/course/preliminaries.pdf" target="_blank" rel="noopener">http://www.nlpr.ia.ac.cn/course/preliminaries.pdf</a></p>
+<p>Direct3D:<br> InfinityPointInPost-PerspectiveSpace=<br><img src="Picture14.png" alt=""></p>
+<p>（一）:<br>World Space:<br><img src="Picture15.png" alt=""><br>Post-Perspective Space:<br><img src="Picture16.png" alt=""><br><img src="Picture17.png" alt=""><br>(二):<br>World Space:<br><img src="Picture18.png" alt=""><br>Post-Perspective Space:<br><img src="Picture19.png" alt=""><br><img src="Picture20.png" alt=""><br>(三):<br>World Space<br><img src="Picture21.png" alt=""><br>Post-Perspective Space:<br><img src="Picture22.png" alt=""></p>
+<p>阴影错误:<br>位于摄像机后方的光源:<br>解决方案:<br>a.扩大视锥范围<br><img src="Picture23.png" alt=""><br>b.特殊的阴影矩阵<br><img src="Picture24.png" alt=""><br><img src="Picture25.png" alt=""></p>
+<p>阴影瑕疵：<br>(一)Near-Plane Dependence:<br><img src="Picture26.png" alt=""><br>解决方案:<br>“Virtually” slide back near plane:<br><img src="Picture27.png" alt=""></p>
+<p>Code:<br>View’ = View * D3DXMatrixTranslate(0, 0, Zsb);<br>theta = max(atan(hf / (f + Zsb)), atan(hn / (n + Zsb)));<br>D3DXMatrixPerspectiveFovLH(&amp;Proj’, 2*theta, aspect, n + Zsb, f + Zsb);</p>
+<p>(二)View-Dependent:View Direction is parallel to the light direction<br><img src="Picture28.png" alt=""><br>解决方案:<br>Focusing the Light Camera Based on the Bounding Volumes of Shadow Receivers:<br><img src="Picture29.png" alt=""></p>
+<p>Code:<br>BoundingCone::BoundingCone(const std::vector<BoundingBox>* boxes, const D3DXMATRIX* projection, const D3DXVECTOR3* _apex, const D3DXVECTOR3* _direction): apex(<em>_apex), direction(</em>_direction)<br>{<br>    const D3DXVECTOR3 yAxis(0.f, 1.f, 0.f);<br>    const D3DXVECTOR3 zAxis(0.f, 0.f, 1.f);<br>    D3DXVec3Normalize(&amp;direction, &amp;direction);</p>
+<pre><code>D3DXVECTOR3 axis = yAxis;
+
+if ( fabsf(D3DXVec3Dot(&amp;yAxis, &amp;direction))&gt;0.99f )
+    axis = zAxis;
+
+D3DXMatrixLookAtLH(&amp;m_LookAt, &amp;apex, &amp;(apex+direction), &amp;axis);
+
+float maxx = 0.f, maxy = 0.f;
+fNear = 1e32f;
+fFar =  0.0f;
+
+D3DXMATRIX concatMatrix;
+D3DXMatrixMultiply(&amp;concatMatrix, projection, &amp;m_LookAt);
+
+for (unsigned int i=0; i&lt;boxes-&gt;size(); i++)
+{
+    const BoundingBox&amp; bbox = (*boxes)[i];
+    for (int j=0; j&lt;8; j++)
+    {
+        D3DXVECTOR3 vec = bbox.Point(j);
+        D3DXVec3TransformCoord(&amp;vec, &amp;vec, &amp;concatMatrix);
+        maxx = max(maxx, fabsf(vec.x / vec.z));
+        maxy = max(maxy, fabsf(vec.y / vec.z));
+        fNear = min(fNear, vec.z);
+        fFar  = max(fFar, vec.z);
+    }
+}
+fovx = atanf(maxx);
+fovy = atanf(maxy);</code></pre><p>(三)Requires high-precision depth buffer:<br>解决方案:<br>D24X8/R32F</p>
+<p>Depth Biasing:<br>优点:解决self-shadowing<br><img src="Picture30.png" alt=""><br><img src="Picture31.png" alt=""><br>缺点:导致Peter Panning<br><img src="Picture32.png" alt=""></p>
+<p>a.Constant Bias<br>b.Slope-Scale Bias</p>
+<p>Code:<br>//cosTheta is dot( n,l ), clamped between 0 and 1<br>float bias = 0.005*tan(acos(cosTheta));<br>bias = clamp(bias, 0,0.01);</p>
+<p>c.NormalOffset Bias<br>d.(UV-Only)NormalOffset Bias</p>
+<p>Code:<br>float4 plp;<br>float4 NormalOffsetScale =<br>// cosLightAngle is dot( n,l ), clamped between 0 and 1<br>bNormalOffsetSlopeScale ? Saturate(1-cosLightAngle) : 1.0;<br>NormalOffsetScale * = 0.005 * ShadowMapTexelSize;<br>float4 shadowOffset = float4(WorldSpaceNormal.xyz * NormalOffsetScale, 0);<br>if(bOnlyUVNormalOffset)<br>{<br>    plp = mul(Pw,ShadowViewProjXf);<br>    float4 shadowPwUVOnly = pw + ShadowOffset;<br>    float4 UVOffsetPlp = mul(shadowPwUVOnly,ShadowViewProjXf);<br>    Plp.xy = UVOffsetPlp.xy;<br>}<br>else<br>{<br>    float4 shadowPw = Pw + ShadowOffset;<br>    Plp = mul(ShadowPw, ShadowViewProjXf);<br>}</p>
+<p>d. Receiver Plane Depth Bias</p>
+<p>参考资料:<br><a href="http://igm.univ-mlv.fr/~biri/Enseignement/IMAC3/Donnees/PSM.pdf" target="_blank" rel="noopener">http://igm.univ-mlv.fr/~biri/Enseignement/IMAC3/Donnees/PSM.pdf</a><br><a href="https://developer.download.nvidia.com/books/HTML/gpugems/gpugems_ch14.html" target="_blank" rel="noopener">https://developer.download.nvidia.com/books/HTML/gpugems/gpugems_ch14.html</a><br><a href="http://jankautz.com/courses/ShadowCourse/03-PerspectiveSM.pdf" target="_blank" rel="noopener">http://jankautz.com/courses/ShadowCourse/03-PerspectiveSM.pdf</a><br><a href="https://www.cg.tuwien.ac.at/research/publications/2004/Wimmer-2004-LSPM/Wimmer-2004-LSPM-Paper.pdf" target="_blank" rel="noopener">https://www.cg.tuwien.ac.at/research/publications/2004/Wimmer-2004-LSPM/Wimmer-2004-LSPM-Paper.pdf</a><br><a href="http://www.dissidentlogic.com/old/images/NormalOffsetShadows/GDC_Poster_NormalOffset.png" target="_blank" rel="noopener">http://www.dissidentlogic.com/old/images/NormalOffsetShadows/GDC_Poster_NormalOffset.png</a></p>
+<p>LISPSM:</p>
+<p><img src="Picture33.png" alt=""><br>结论:<br><img src="Picture34.png" alt=""></p>
+<p>最优P矩阵推导:<br><img src="Picture35.png" alt=""><br>结论:P是对数矩阵</p>
+<p>Lispsm矩阵推导:<br>Special:<br><img src="Picture36.png" alt=""></p>
+<p>Z-Coordinate:<br><img src="Picture37.png" alt=""><br><img src="Picture38.png" alt=""><br>结论:<br><img src="Picture39.png" alt=""></p>
+<p>X-Coordinate:<br><img src="Picture40.png" alt=""><br><img src="Picture41.png" alt=""></p>
+<p>General：<br><img src="Picture42.png" alt=""><br><img src="Picture43.png" alt=""></p>
+<p>Z-Coordinate:<br><img src="Picture44.png" alt=""><br><img src="Picture45.png" alt=""></p>
+<p>General Edge:<br><img src="Picture46.png" alt=""><br><img src="Picture47.png" alt=""><br><img src="Picture48.png" alt=""></p>
+<p>参考资料:<br><a href="https://www.cg.tuwien.ac.at/research/publications/2004/Wimmer-2004-LSPM/Wimmer-2004-LSPM-Paper.pdf" target="_blank" rel="noopener">https://www.cg.tuwien.ac.at/research/publications/2004/Wimmer-2004-LSPM/Wimmer-2004-LSPM-Paper.pdf</a></p>
+<p>Cascaded Shadow Maps:<br>原理与实现:<br><a href="https://zhuanlan.zhihu.com/p/53689987" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/53689987</a><br>优化:<br><a href="https://zhuanlan.zhihu.com/p/74991883" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/74991883</a></p>
+<p>PCF/Convolution Shadow Maps/VSM/ESM/PCSS:<br>原理与实现:<a href="https://zhuanlan.zhihu.com/p/26853641" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/26853641</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/24/%E8%A7%92%E8%89%B2%E7%83%98%E7%84%99PBR%E5%85%89%E7%85%A7%E6%95%88%E6%9E%9C%E5%88%B0%E8%B4%B4%E5%9B%BE/" rel="next" title="角色烘焙PBR光照效果到贴图">
+                <i class="fa fa-chevron-left"></i> 角色烘焙PBR光照效果到贴图
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/24/%E7%9A%AE%E8%82%A4%E6%B8%B2%E6%9F%93%E5%88%86%E6%9E%90/" rel="prev" title="皮肤渲染分析">
+                皮肤渲染分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
